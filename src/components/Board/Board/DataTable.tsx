@@ -33,7 +33,12 @@ export const DataTable = ({ data }: Props) => {
                     </tr>
                 </thead>
                 <tbody>
-                {data.map((item, index) => (
+                {data.length === 0 ? (
+                        <tr>
+                            <td colSpan={5} style={{textAlign:'center'}}>데이터가 없습니다</td>
+                        </tr>
+                    ) : (
+                    data.map((item, index) => (
                     <tr key={index}>
                         <td><Tag tag={item.eventType} /></td>
                         <td><Link to={`/board/${item.seq}`}>{item.title}</Link></td>
@@ -41,7 +46,8 @@ export const DataTable = ({ data }: Props) => {
                         <td>{item.eventTime}</td>
                         <td>{item.insdate}</td>
                     </tr>
-                ))}
+                    ))
+                )}
                 </tbody>
             </table>
         </>

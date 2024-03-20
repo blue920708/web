@@ -165,12 +165,6 @@ export const Sidebar = () => {
             className={'bi bi-file-person'}
             isActive={location.pathname === '/about'}
           />
-          <NavItem
-            path={'/about'}
-            pageTitle={'Contact'}
-            className={'bi bi-envelope'}
-            isActive={location.pathname === '/about/contact'}
-          />
         </ul>
       </aside>
     </>

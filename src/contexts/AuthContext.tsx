@@ -49,6 +49,7 @@ export const AuthProvider = ({ children }: Props) => {
     Cookies.remove("userToken");
     setIsAuthenticated(false);
     setUserToken({});
+    console.log(userToken);
     location.href = "/";
   };
 

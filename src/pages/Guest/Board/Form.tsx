@@ -94,6 +94,7 @@ export const Form = () => {
                 setEventType(response.data.eventType);
             } else if (response.msg) {
                 alert(response.msg);
+                navi("/");
             }
         }
     }

@@ -19,7 +19,7 @@ export const Board = () => {
     const [page, setPage] = useState<number>(1);
     const [keyword, setKeyword] = useState<string>('');
     const [keywordInput, setKeywordInput] = useState<string>('');
-    const [total, setTotal] = useState<number>(1);
+    const [total, setTotal] = useState<number>(0);
     const [data, setData] = useState([]);
     const handleData = async () => {
         if(!isAuthenticated){
@@ -134,7 +134,7 @@ export const Board = () => {
                         <Pagination
                             activePage={page}
                             itemsCountPerPage={10} // 한 페이지당 항목 수
-                            totalItemsCount={total} // 총 페이지 수
+                            totalItemsCount={total > 0 ? total : 1} // 총 페이지 수
                             pageRangeDisplayed={5} // 표시할 페이지 수
                             onChange={goPage}
                             itemClass="page-item"
