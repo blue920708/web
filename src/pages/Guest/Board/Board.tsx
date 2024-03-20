@@ -1,15 +1,9 @@
-import {useLocation, useNavigate, useParams} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import React, {useContext, useEffect, useState} from "react";
 import AuthContext from "../../../contexts/AuthContext";
 import {useAxios} from "../../../hooks/UseAxios";
 import {DataTable} from "../../../components/Board/Board/DataTable";
 import Pagination from "react-js-pagination";
-
-interface boardSearchType {
-    page: number;
-    size: number;
-    keyword: string;
-}
 
 export const Board = () => {
     const navi = useNavigate();
@@ -47,7 +41,7 @@ export const Board = () => {
     }
 
     const saveStorage = () => {
-        let boardSearch = {
+        const boardSearch = {
             page: page,
             size: size,
             keyword: keyword

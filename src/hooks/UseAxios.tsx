@@ -17,7 +17,7 @@ const instance: AxiosInstance = axios.create({
 
 let savedConfig: AxiosRequestConfig | null = null;
 export const useAxios = () => {
-  const {isLogin, disable, isAuthenticated, userToken} = useContext(AuthContext);
+  const {isLogin, disable, userToken} = useContext(AuthContext);
   const [loading, setLoading] = useState(false);
 
   const sendRequest = async (
