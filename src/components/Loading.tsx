@@ -1,5 +1,5 @@
-// @ts-ignore
-import Spinner from '../assets/img/spinner.gif';
+
+//import Spinner from '../assets/img/spinner.gif';
 import styled from '@emotion/styled';
 
 const Background = styled.div`
@@ -31,7 +31,7 @@ export const Loading = ({ loading }: Props) => {
     <>
       <Background>
         {/*<LoadingText>잠시만 기다려 주세요.</LoadingText>*/}
-        <img src={Spinner} alt='로딩중' width='5%' />
+        <img src={'/img/spinner.gif'} alt='로딩중' width='5%' />
       </Background>
     </>
   );

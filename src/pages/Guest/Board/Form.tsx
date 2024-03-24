@@ -127,7 +127,7 @@ export const Form = () => {
                     <div className="col-lg-6">
                         <div className="card">
                             <div className="card-body"><br/>
-                                <Link className="card-title" to={'/board/' + seq} ><i className="bi bi-arrow-left"></i></Link><br/><br/>
+                                <Link className="card-title" to={seq ? '/board/' + seq : '/board'} ><i className="bi bi-arrow-left"></i></Link><br/><br/>
                                     <div className="row mb-3">
                                         <label htmlFor="inputText" className="col-sm-2 col-form-label">제목<span style={{color:"red"}}>*</span></label>
                                         <div className="col-sm-10">

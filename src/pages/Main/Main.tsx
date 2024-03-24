@@ -11,7 +11,7 @@ export const Main = ({ pageTitle }: Page) => {
         <nav>
           <ol className='breadcrumb'>
             <li className='breadcrumb-item active'>
-              <a href='index.html'>Home</a>
+              <a href='/'>Home</a>
             </li>
           </ol>
         </nav>
@@ -44,7 +44,7 @@ export const Main = ({ pageTitle }: Page) => {
               <div className='card-body'>
                 <h5 className='card-title'>시작하기</h5>
                 <p>
-                  - <strong>NiceDiary</strong>는 <strong>웹개발자 최성훈</strong>의 포트폴리오 목적으로 만들어진 개인 프로젝트입니다.
+                  - <strong>NiceDiary</strong>는 <strong>개발자 최성훈</strong>의 포트폴리오 목적으로 만들어진 개인 프로젝트입니다.
                   <br />
                   <br />
                   - <strong>NiceDiary</strong>는 개인 업무를 관리하는 웹

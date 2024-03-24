@@ -3,31 +3,12 @@ export const About = () => {
       <>
           <section className="section profile">
               <div className="row">
-                  {/*<div className="col-xl-4">
-
-                      <div className="card">
-                          <div className="card-body profile-card pt-4 d-flex flex-column align-items-center">
-
-                              <img src="../assets/img/firstView.jpg" alt="Profile" className="rounded-circle"/>
-                                  <h2>최성훈</h2>
-                                  <h3>Web Developer</h3>
-                                  <div className="social-links mt-2">
-                                      <a href="About/About#" className="twitter"><i className="bi bi-twitter"></i></a>
-                                      <a href="About/About#" className="facebook"><i className="bi bi-facebook"></i></a>
-                                      <a href="About/About#" className="instagram"><i className="bi bi-instagram"></i></a>
-                                      <a href="About/About#" className="linkedin"><i className="bi bi-linkedin"></i></a>
-                                  </div>
-                          </div>
-                      </div>
-
-                  </div>*/}
-
                   <div className="col-xl-8">
 
                       <div className="card">
                           <div className="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-                              <img src="../assets/img/firstView.jpg" alt="Profile" className="rounded-circle"/>
+                              <img src="/img/firstView.jpg" alt="Profile" className="rounded-circle"/>
                               <h2>최성훈</h2><br/>
                               <h3>Web Developer</h3><br/>
                               <p className="small fst-italic">Sunt est soluta temporibus accusantium neque nam

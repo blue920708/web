@@ -90,7 +90,7 @@ export const Sidebar = () => {
           <li className='nav-heading'>NiceDiary</li>
 
           {/* HOME */}
-          <NavItem path={'/'} pageTitle={'HOME'} className={'bi bi-grid'} />
+          <NavItem path={'/'} pageTitle={'시작하기'} className={'bi bi-grid'} />
 
           {/* 게시판 */}
           <NavItem

@@ -1,5 +1,5 @@
 /*import './assets/vendor/apexcharts/apexcharts.min.js';*/
-import './assets/vendor/bootstrap/js/bootstrap.bundle.min.js';
+/*import './assets/vendor/bootstrap/js/bootstrap.bundle.min.js';
 import './assets/vendor/chart.js/chart.umd.js';
 import './assets/vendor/echarts/echarts.min.js';
 import './assets/vendor/quill/quill.min.js';
@@ -12,8 +12,8 @@ import './assets/vendor/boxicons/css/boxicons.min.css';
 import './assets/vendor/quill/quill.snow.css';
 import './assets/vendor/quill/quill.bubble.css';
 import './assets/vendor/remixicon/remixicon.css';
-import './assets/vendor/simple-datatables/style.css';
-import './assets/css/style.css';
+import './assets/vendor/simple-datatables/style.css';*/
+
 import './App.css';
 import { Layout } from './layouts/Layout';
 import {Route, Routes, BrowserRouter as Router} from 'react-router-dom';
@@ -22,7 +22,7 @@ import { NotFound } from './pages/Error/NotFound';
 import { Main } from './pages/Main/Main';
 import { Join } from './pages/Login/Join/Join';
 import { AuthProvider } from './contexts/AuthContext';
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Page } from './pages/Guest/Page/Page';
 import { FindId } from './pages/Login/Find/FindId';
 import { FindPwd } from './pages/Login/Find/FindPwd';
@@ -34,16 +34,16 @@ import {About} from "./pages/About/About";
 
 function App() {
 
-  /*useEffect(() => {
-    const script = document.createElement('script');
-    script.src = '/assets/js/main.js';
+  useEffect(() => {
+    /*const script = document.createElement('script');
+    script.src = '/js/main.js';
     script.async = true;
     document.body.appendChild(script);
 
     return () => {
       document.body.removeChild(script);
-    };
-  }, []);*/
+    };*/
+  }, []);
 
   return (
     <>

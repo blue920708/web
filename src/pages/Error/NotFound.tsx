@@ -10,7 +10,6 @@ export const NotFound = () => {
         <Link to={'/'} className='btn'>
           Back to home
         </Link>
-        {/*<img src="../assets/img/not-found.svg" className="img-fluid py-5" alt="Page Not Found" />*/}
         <br />
         <div className='credits'>
           Designed by <a href='https://bootstrapmade.com/'>BootstrapMade</a>

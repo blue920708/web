@@ -10,8 +10,7 @@ import AuthContext from "../contexts/AuthContext";
 import Cookies from "js-cookie";
 
 const instance: AxiosInstance = axios.create({
-  //baseURL: 'http://43.203.197.193',
-  baseURL: 'http://43.203.197.193:8080',
+  baseURL: process.env.REACT_APP_API_URL,
   timeout: 1000 * 60,
 });
 
