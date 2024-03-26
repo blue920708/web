@@ -25,13 +25,11 @@ interface Props {
 export const AuthProvider = ({ children }: Props) => {
   const { sendRequest } = useAxios();
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(() => {
-    //const userToken = sessionStorage.getItem('userToken');
     const userToken = Cookies.get('userToken');
     return userToken ? JSON.parse(userToken) : false;
   });
 
   const [userToken, setUserToken] = useState<{ [key: string]: string }>(() => {
-    //const userToken = sessionStorage.getItem('userToken');
     const userToken = Cookies.get('userToken');
     return userToken ? JSON.parse(userToken) : null;
   });
@@ -49,7 +47,6 @@ export const AuthProvider = ({ children }: Props) => {
     Cookies.remove("userToken");
     setIsAuthenticated(false);
     setUserToken({});
-    console.log(userToken);
     location.href = "/";
   };
 

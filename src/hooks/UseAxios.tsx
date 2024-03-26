@@ -95,11 +95,9 @@ export const useAxios = () => {
         isLogin(response.data.data);
         return response.data.data.accessToken;
       } else {
-        alert("로그인 정보가 없습니다.");
         reload();
       }
     } catch (error) {
-      alert("로그인 정보가 없습니다.!");
       reload();
     }
   };

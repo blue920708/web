@@ -4,11 +4,12 @@ import AuthContext from "../../../contexts/AuthContext";
 import {useAxios} from "../../../hooks/UseAxios";
 import {DataTable} from "../../../components/Board/Board/DataTable";
 import Pagination from "react-js-pagination";
+import {Loading} from "../../../components/Loading";
 
 export const Board = () => {
     const navi = useNavigate();
     const {isAuthenticated, userToken} = useContext(AuthContext);
-    const {sendRequest} = useAxios();
+    const {sendRequest, loading} = useAxios();
     const [size, setSize] = useState<number>(10);
     const [page, setPage] = useState<number>(1);
     const [keyword, setKeyword] = useState<string>('');
@@ -72,75 +73,70 @@ export const Board = () => {
 
     useEffect(() => {
         handleData();
-    }, [page, size, keyword]);
-
-    /*useEffect(() => {
-        return () => {
-            saveStorage();
-        }
-    })*/
+    }, [keyword, page]);
 
     return (
         <>
-        <div className="pagetitle">
-            <h1>다이어리</h1>
-            <nav>
-                <ol className="breadcrumb">
-                    <li className="breadcrumb-item">NiceDiary</li>
-                    <li className="breadcrumb-item active">다이어리</li>
-                </ol>
-            </nav>
-        </div>
-    <section className="section">
-        <div className="row">
-            <div className="col-lg-12">
-                <div className="card">
-                    <div className="card-body">
-                        <h5 className="card-title"></h5>
-                        <div className="datatable-top" >
-                            <div className="search-bar" style={{display: "-webkit-inline-box"}}>
-                                <input
-                                    type="text"
-                                    className="form-control"
-                                    id="inputText"
-                                    placeholder={'검색어를 입력하세요.'}
-                                    maxLength={30}
-                                    value={keywordInput}
-                                    onChange={e => setKeywordInput(e.target.value)}
-                                    onKeyDown={(e) => {
-                                        if(e.key === 'Enter'){
-                                            goSearch();
-                                        }
-                                    }}
-                                />&nbsp;
-                                <button
-                                    type="button"
-                                    className="btn btn-primary"
-                                    onClick={goSearch}
-                                >검색</button>
-                            </div>
-                            <div>
-                                <button type="button" className="btn btn-primary" onClick={() => navi("/board/form")}>작성하기</button>
+            <Loading loading={loading} />
+            <div className="pagetitle">
+                <h1>다이어리</h1>
+                <nav>
+                    <ol className="breadcrumb">
+                        <li className="breadcrumb-item">NiceDiary</li>
+                        <li className="breadcrumb-item active">다이어리</li>
+                    </ol>
+                </nav>
+            </div>
+            <section className="section">
+                <div className="row">
+                    <div className="col-lg-12">
+                        <div className="card">
+                            <div className="card-body">
+                                <h5 className="card-title"></h5>
+                                <div className="datatable-top" >
+                                    <div className="search-bar" style={{display: "-webkit-inline-box"}}>
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            id="inputText"
+                                            placeholder={'검색어를 입력하세요.'}
+                                            maxLength={30}
+                                            value={keywordInput}
+                                            onChange={e => setKeywordInput(e.target.value)}
+                                            onKeyDown={(e) => {
+                                                if(e.key === 'Enter'){
+                                                    goSearch();
+                                                }
+                                            }}
+                                        />&nbsp;
+                                        <button
+                                            type="button"
+                                            className="btn btn-primary"
+                                            onClick={goSearch}
+                                        >검색</button>
+                                    </div>
+                                    <div>
+                                        <button type="button" className="btn btn-primary" onClick={() => navi("/board/form")}>작성하기</button>
+                                    </div>
+                                </div>
+                                <br/>
+                                <DataTable data={data} />
+                                <Pagination
+                                    activePage={page}
+                                    itemsCountPerPage={10} // 한 페이지당 항목 수
+                                    totalItemsCount={total > 0 ? total : 1} // 총 페이지 수
+                                    pageRangeDisplayed={5} // 표시할 페이지 수
+                                    onChange={goPage}
+                                    itemClass="page-item"
+                                    linkClass="page-link"
+                                    prevPageText="이전"
+                                    nextPageText="다음"
+                                />
                             </div>
                         </div>
-                        <br/>
-                        <DataTable data={data} />
-                        <Pagination
-                            activePage={page}
-                            itemsCountPerPage={10} // 한 페이지당 항목 수
-                            totalItemsCount={total > 0 ? total : 1} // 총 페이지 수
-                            pageRangeDisplayed={5} // 표시할 페이지 수
-                            onChange={goPage}
-                            itemClass="page-item"
-                            linkClass="page-link"
-                            prevPageText="이전"
-                            nextPageText="다음"
-                        />
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
+            </section>
         </>
     );
 }
